@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillGraph | Learning Roadmaps</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="topbar">
+        <a class="brand" href="#">
+            <span class="brand-mark">S</span>
+            <span>SkillGraph
+                <small>LEARN WITH A PLAN</small>
+            </span>
+        </a>
+        <span class="live"><i></i> C++ engine connected</span>
+    </header>
+
+    <main class="page">
+        <section class="hero">
+            <div class="hero-copy">
+                <p class="eyebrow">YOUR LEARNING MAP</p>
+                <h1>Small steps.<br><span>Real progress.</span></h1>
+                <p class="hero-text">
+                    Choose a goal, explore the skills behind it,
+                    and follow each prerequisite one concept at a time.
+                </p>
+            </div>
+
+            <div class="hero-stat">
+                <span class="stat-icon">↗</span>
+                <strong id="skill-count">8</strong>
+                <span>skills in this roadmap</span>
+                <div class="stat-rule"></div>
+                <small>GRAPH-BASED LEARNING</small>
+            </div>
+        </section>
+
+        <section class="toolbar">
+            <div>
+                <p class="eyebrow">ROADMAPS</p>
+                <h2>Choose your learning path</h2>
+            </div>
+            <input
+                id="search"
+                type="search"
+                placeholder="Search a skill..."
+                aria-label="Search skills"
+            >
+        </section>
+
+        <!-- Roadmaps are loaded from the C++ backend -->
+        <section class="roadmaps-section">
+            <div id="roadmap-tabs" class="roadmap-tabs">
+                <p class="loading">Loading roadmaps...</p>
+            </div>
+        </section>
+
+        <section class="workspace">
+            <div class="map-panel">
+                <div class="panel-heading">
+                    <div>
+                        <h3 id="map-title">Skills overview</h3>
+                        <p id="map-description">
+                            Select a card to explore its prerequisites.
+                        </p>
+                    </div>
+                    <span class="legend"><i></i> Skill</span>
+                </div>
+
+                <div id="graph" class="graph">
+                    <p class="loading">Loading skills from C++...</p>
+                </div>
+            </div>
+
+            <aside class="detail-panel">
+                <p class="eyebrow">SKILL DETAILS</p>
+
+                <div id="detail">
+                    <span class="detail-symbol">◎</span>
+                    <h3>Choose a skill</h3>
+                    <p>
+                        Select a skill card to see its description
+                        and dependencies.
+                    </p>
+                </div>
+
+                <div class="progress-box">
+                    <div class="progress-top">
+                        <span>Your progress</span>
+                        <strong id="progress-text">0 / 8</strong>
+                    </div>
+                    <div class="progress-track">
+                        <div id="progress-fill"></div>
+                    </div>
+                    <p>Progress is saved separately for each roadmap.</p>
+                </div>
+            </aside>
+        </section>
+
+        <section class="algorithm-section">
+            <div class="section-title">
+                <div>
+                    <p class="eyebrow">UNDER THE HOOD</p>
+                    <h2>Explore the graph algorithms</h2>
+                </div>
+                <p>These actions run in C++ on the server.</p>
+            </div>
+
+            <div class="algorithm-buttons">
+                <button data-algo="bfs">Run BFS</button>
+                <button data-algo="dfs">Run DFS</button>
+                <button data-algo="topo">Topological sort</button>
+                <button data-algo="cycle">Detect cycle</button>
+            </div>
+
+            <div id="output" class="output">
+                <span class="output-dot"></span>
+                Choose an algorithm to see the result.
+            </div>
+        </section>
+
+        <footer>
+            <span>SkillGraph</span>
+            <span>C++ · HTML · CSS · JavaScript</span>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
